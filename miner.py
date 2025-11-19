@@ -21,9 +21,7 @@ from random_sampler import run_sampler
 DB_PATH = str(Path(nova_ph2.__file__).resolve().parent / "combinatorial_db" / "molecules.sqlite")
 
 def get_config(input_file: os.path = os.path.join(BASE_DIR, "input.json")):
-    """
-    Get config from input file
-    """
+
     with open(input_file, "r") as f:
         d = json.load(f)
     config = {**d.get("config", {}), **d.get("challenge", {})}
